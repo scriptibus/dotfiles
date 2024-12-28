@@ -1,0 +1,14 @@
+**/*
+!.gitignore
+!ghostty/
+!ghostty/**/*
+!fish/
+!fish/**/*
+!nvim/
+!nvim/**/*
+!ranger/
+!ranger/**/*
+!skhd/
+!skhd/**/*
+!yabai/
+!yabai/**/*

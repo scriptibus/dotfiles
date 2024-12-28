@@ -1,0 +1,5 @@
+font-size = 20
+macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
+shell-integration = fish
+command = /opt/homebrew/bin/fish

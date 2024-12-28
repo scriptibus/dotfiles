@@ -1,0 +1,40 @@
+vim.cmd.colorscheme("catppuccin")
+
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set number relativenumber")
+vim.keymap.set("n", "<leader>gb", ":e#<CR>")
+vim.keymap.set("n", "<leader>f", ":Format<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>x", ":x<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>Q", ":qa<CR>")
+vim.keymap.set("n", "<leader>W", ":wa<CR>")
+vim.keymap.set("n", "<leader>X", ":xa<CR>")
+vim.keymap.set("n", "<leader>s", ":vsp %<CR>")
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk %<CR>")
+vim.keymap.set("n", "<leader>wd", ":w !git diff --no-index -- % - <CR>")
+vim.keymap.set("x", "<leader>re", ":Refactor extract ")
+vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ")
+vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ")
+vim.keymap.set("n", "<Leader>t", ":Telescope find_template type=insert <CR>")
+
+vim.keymap.set("n", "<Leader>e", function()
+	local diagnostics = vim.diagnostic.get()
+	if #diagnostics == 0 then
+		print("No diagnostics available")
+		return
+	end
+	vim.diagnostic.open_float(nil, { scope = "line", border = "rounded" })
+end, { desc = "Show diagnostics in floating window" })
+
+vim.keymap.set("n", "<leader>fr", function()
+	local search = vim.fn.input("Search: "):gsub("\\", "\\\\")
+	vim.cmd('grep "' .. search:gsub("\\", "\\\\") .. '"')
+	local replace = vim.fn.input("Replace: "):gsub("\\", "\\\\")
+	vim.cmd("cfdo %s/" .. search .. "/" .. replace .. "/g | update")
+end, { noremap = true, silent = true })
+
+vim.cmd.colorscheme("catppuccin")
