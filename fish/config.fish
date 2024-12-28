@@ -2,6 +2,7 @@ if status is-interactive
     # ENV
     source ~/.profile
     export LG_CONFIG_FILE="/Users/lucas.nothnagel/.config/lazygit/config.yml"
+    export EDITOR="nvim"
 
     # PATH
     fish_add_path /opt/homebrew/bin
