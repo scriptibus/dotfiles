@@ -1,4 +1,7 @@
 if status is-interactive
+    # ENV
+    source ~/.profile
+
     # PATH
     fish_add_path /opt/homebrew/bin
     fish_add_path $HOME/.volta/bin
